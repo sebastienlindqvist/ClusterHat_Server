@@ -18,11 +18,33 @@ $ clusterctrl wp off # Disables EEPROM write protect (only needed for updates)
 ```
 ### Code from other github ###
 https://github.com/lreimer/raspi-swarm-box
+Before you continue with the following steps, make sure you have performed the basic setup of all four Zero nodes.
+In a terminal, issue the following commands:
+```
+clusterhat on
+
+ssh-keygen
+ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.1
+ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.2
+ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.3
+ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.4
+```
+To make working with the nodes a little easier, edit your `/etc/hosts` file and add the following:
+```
+172.19.181.254  master cnat
+172.19.181.1    p1
+172.19.181.2    p2
+172.19.181.3    p3
+172.19.181.4    p4
+```
+
 ```
 clusterhat on p1
 minicom p1
 sudo raspi-config
 ```
+### Code from other websites
+
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
 
@@ -30,7 +52,7 @@ to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-d
 to install docker on raspberry pi 0: https://markmcgookin.com/2019/08/04/how-to-install-docker-on-a-raspberry-pi-zero-w-running-raspbian-buster/  
 the pi 0 runs an ARM6
 
-### Code from other websites
+
 
 
 # UPS plus SKU
