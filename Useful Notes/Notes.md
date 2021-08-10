@@ -30,6 +30,9 @@ to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-d
 to install docker on raspberry pi 0: https://markmcgookin.com/2019/08/04/how-to-install-docker-on-a-raspberry-pi-zero-w-running-raspbian-buster/  
 the pi 0 runs an ARM6
 
+### Code from other websites
+
+
 # UPS plus SKU
 https://wiki.52pi.com/index.php/UPS_Plus_SKU:_EP-0136?spm=a2g0o.detail.1000023.17.4bfb6b35vkFvoW
 ```
