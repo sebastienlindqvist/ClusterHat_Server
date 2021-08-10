@@ -37,12 +37,24 @@ To make working with the nodes a little easier, edit your `/etc/hosts` file and 
 172.19.181.3    p3
 172.19.181.4    p4
 ```
+#### Zero Node Setup
 
+On the controller node, open a terminal and perform the following commands for each Zero (p1, p2, p3, p4).
+The user is `pi` and the initial password is `clusterhat`.
 ```
 clusterhat on p1
 minicom p1
 sudo raspi-config
 ```
+In the configuration,
+- make sure you extend the partition to the full size of your SD card!
+- enable SSH
+- change the root password
+- reduce the memory split to 16MB
+- adjust the locale and timezone settings
+- update the system
+
+When all changes are done, perform a reboot of the node. You should be able to login via SSH now.
 ### Code from other websites
 
 # Docker Notes
