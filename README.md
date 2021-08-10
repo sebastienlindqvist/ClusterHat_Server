@@ -1,4 +1,4 @@
-# ClusterHat-Docker-Server
+# ClusterHat-Docker-Kubernetes-Server
 Hello, this repository for setting up a raspberry server using a cluster hat, a ups and docker
 
 # Components
