@@ -1,5 +1,5 @@
-# ClusterHAT notes
-Code from ClusterHAT website
+# ClusterHAT notes 
+### Code from ClusterHAT website ###
 ```
 $ clusterctrl on # Turn power to all Pi Zero on
 $ clusterctrl off  Turn power to all Pi Zero off
@@ -16,8 +16,22 @@ $ clusterctrl led off # Disables Power & P1-P4 LED on Cluster HAT (does not disa
 $ clusterctrl wp on # Write protects HAT EEPROM
 $ clusterctrl wp off # Disables EEPROM write protect (only needed for updates)
 ```
+### Code from other github ###
+https://github.com/lreimer/raspi-swarm-box
+```
+clusterhat on p1
+minicom p1
+sudo raspi-config
+```
 # Docker Notes
-to install docker on raspberry pi 4b
+to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
 
 
-to install docker on raspberry pi 0
+to install docker on raspberry pi 0: https://markmcgookin.com/2019/08/04/how-to-install-docker-on-a-raspberry-pi-zero-w-running-raspbian-buster/  
+the pi 0 runs an ARM6
+
+# UPS plus SKU
+https://wiki.52pi.com/index.php/UPS_Plus_SKU:_EP-0136?spm=a2g0o.detail.1000023.17.4bfb6b35vkFvoW
+```
+
+```
