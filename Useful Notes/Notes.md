@@ -78,7 +78,24 @@ Host p4
     User pi
 ```
 This previous step is a little superfluous, but you will now be able to quickly ssh into any of the nodes from the controller Pi with the command ```ssh hostname``` where ```hostname``` is the hostname of the nodes: p1, p2, p3, or pi4
-
+You should now be able to ssh into each of the nodes to set them up. Repeat the password and localization set up for each node that you performed for the controller node. You should also put the ssh-key that you copied earlier into the ```~/.ssh/authorized_keys``` file:
+```
+ssh p1
+# the default password for the nodes is clusterctl
+echo [paste the ssh key here] >> ~/.ssh/authorized_keys
+sudo raspi-config
+```
+After setting up the localization and ssh on each of the nodes, install the ```ntpdate``` package. This will keep the systemtime synced across the nodes in the background:
+```
+sudo apt-get install -y ntpdate
+```
+Hostnames
+This is a good time to decide on a hostname schema. By default, the images from ClusterHat uses the scheme ```p[1–4]``` for the nodes and ```controller``` for the controller Pi. I have kept this schema for my cluster. However, since we will be adding some resources from the controller Pi to the cluster, we should go ahead and change the hostname of this Pi to ```p0``` in order to make life much easier.
+```
+sudo hostname pi0 
+sudo vi /etc/hostname # change the hostname in this file
+sudo vi /etc/hosts # change ‘controller’ to pi0
+```
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
 
