@@ -61,7 +61,7 @@ After the Pi boots back up, set up a SSH key with the following commands:
 ssh-keygen -t rsa -b 4096
 cat ~/.ssh/id_rsa.pub
 ```
-.pub means your public key
+After you have generated a ssh-key and displayed it, copy it because you will need this in the following steps. The ```.pub``` means your public key.
 Set up a config file for SSH names ```~/.ssh/config``` with the following content:
 ```
 Host p1
@@ -77,7 +77,7 @@ Host p4
     Hostname 172.19.181.4
     User pi
 ```
-
+This previous step is a little superfluous, but you will now be able to quickly ssh into any of the nodes from the controller Pi with the command ```ssh hostname``` where ```hostname``` is the hostname of the nodes: p1, p2, p3, or pi4
 
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
