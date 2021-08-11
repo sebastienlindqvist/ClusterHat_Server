@@ -56,6 +56,28 @@ In the configuration,
 
 When all changes are done, perform a reboot of the node. You should be able to login via SSH now.
 ### Code from other websites
+After the Pi boots back up, set up a SSH key with the following commands:
+```
+ssh-keygen -t rsa -b 4096
+cat ~/.ssh/id_rsa.pub
+```
+.pub means your public key
+Set up a config file for SSH names ```~/.ssh/config``` with the following content:
+```
+Host p1
+    Hostname 172.19.181.1
+    User pi
+Host p2
+    Hostname 172.19.181.2
+    User pi
+Host p3
+    Hostname 172.19.181.3
+    User pi
+Host p4
+    Hostname 172.19.181.4
+    User pi
+```
+
 
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
