@@ -96,6 +96,18 @@ sudo hostname pi0
 sudo vi /etc/hostname # change the hostname in this file
 sudo vi /etc/hosts # change ‘controller’ to pi0
 ```
+It is not necessary for you to have a shared drive to run commands on the cluster, but it be extremely useful to have a partition to hold data that the entire cluster can use. You can set up and use a partition on the controller’s SD card if it is simpler for you. For my cluster, I used an extra 128 GB thumb drive I had laying about to use as extra drive. Originally, I was planning on using an older 320GB external, but after plugging it in, the controller Pi started giving me under-voltage warnings.  
+We will be setting up a NFS share with the controller Pi, so log into the Pi and follow these steps.  
+To find out where the device is loaded in ```/dev```, run the ```lsblk``` command and you should see something like this:
+```
+$ lsblk
+NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda 8:0 1 119.5G 0 disk
+└─sda1 8:1 1 119.5G 0 part
+mmcblk0 179:0 0 29.7G 0 disk
+├─mmcblk0p1 179:1 0 256M 0 part /boot
+└─mmcblk0p2 179:2 0 29.5G 0 part /
+```
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
 
