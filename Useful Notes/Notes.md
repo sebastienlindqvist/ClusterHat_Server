@@ -118,6 +118,9 @@ sudo mkdir /media/Storage
 sudo chown nobody.nogroup -R /media/Storage
 sudo chmod -R 777 /media/Storage
 ```
+After setting this up, run the ```blkid``` command to get the UUID of the drive so we can set up automatic mounting of the drive whenever the pi boot. You will be looking for a line like this:  
+```/dev/sda1: LABEL=”sammy” UUID=”a13c2fad-7d3d-44ca-b704-ebdc0369260e” TYPE=”ext4" PARTLABEL=”primary” PARTUUID=”d310f698-d7ae-4141-bcdb-5b909b4eb147"```  
+Though the most important part is the UUID, ```UUID=”a13c2fad-7d3d-44ca-b704-ebdc0369260e”```. Edit your fstab to contain the following line, while making sure you substitute your drives UUID in the appropriate location:
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
 
