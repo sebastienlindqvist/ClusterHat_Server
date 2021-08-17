@@ -108,6 +108,16 @@ mmcblk0 179:0 0 29.7G 0 disk
 ├─mmcblk0p1 179:1 0 256M 0 part /boot
 └─mmcblk0p2 179:2 0 29.5G 0 part /
 ```
+For me, and most likely yourself, the device is located at ```/dev/sda1```. Next we will need to partition the drive:
+```
+sudo mkfs.ext4 /dev/sda1
+```
+After formatting the drive, set up a directory to mount it to. I prefer using the ```/media``` folder to set up my external drives, but you can place the folder anywhere on the filesystem. Just be sure that it will be the same folder across all of your nodes!
+```
+sudo mkdir /media/Storage
+sudo chown nobody.nogroup -R /media/Storage
+sudo chmod -R 777 /media/Storage
+```
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
 
