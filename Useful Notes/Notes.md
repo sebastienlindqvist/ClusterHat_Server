@@ -120,7 +120,34 @@ sudo chmod -R 777 /media/Storage
 ```
 After setting this up, run the ```blkid``` command to get the UUID of the drive so we can set up automatic mounting of the drive whenever the pi boot. You will be looking for a line like this:  
 ```/dev/sda1: LABEL=”sammy” UUID=”a13c2fad-7d3d-44ca-b704-ebdc0369260e” TYPE=”ext4" PARTLABEL=”primary” PARTUUID=”d310f698-d7ae-4141-bcdb-5b909b4eb147"```  
-Though the most important part is the UUID, ```UUID=”a13c2fad-7d3d-44ca-b704-ebdc0369260e”```. Edit your fstab to contain the following line, while making sure you substitute your drives UUID in the appropriate location:
+Though the most important part is the UUID, ```UUID=”a13c2fad-7d3d-44ca-b704-ebdc0369260e”```. Edit your fstab to contain the following line, while making sure you substitute your drives UUID in the appropriate location:  
+```
+sudo vi /etc/fstab
+# Add the following line to the bottom of the fstab file:
+UUID=a13c2fad-7d3d-44ca-b704-ebdc0369260e /media/Storage ext4 defaults 0 2
+```  
+Ensure that the NFS server is installed on your controller:  
+```sudo apt-get install -y nfs-kernel-server```  
+You will then need to update your ```/etc/exports``` file to contain the following line at the bottom:  
+```
+/media/Storage 172.19.181.0/24(rw,sync,no_root_squash,no_subtree_check)
+```  
+After editing the exports file, run the command ```sudo exportfs -a``` to update the NFS server.  
+### Mount the Drive on the Nodes ###
+You will now need to mount the NFS share that we just set up on each of the node Pis. Run the following command set on each node:  
+```
+sudo apt-get install -y nfs-common
+# Create the mount folder, using the same mount folder above.
+# If you used different permissions, use the same permissions here.
+sudo mkdir /media/Storage
+sudo chown nobody.nogroup /media/Storage
+sudo chmod -R 777 /media/Storage
+# Set up automatic mounting by editing your /etc/fstab:
+sudo vi /etc/fstab
+# Add this line to the bottom:
+172.19.181.254:/media/Storage /media/Storage nfs defaults 0 0
+```
+
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
 
