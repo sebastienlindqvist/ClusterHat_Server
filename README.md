@@ -25,8 +25,10 @@ Back
 Now you need to place the raspbian os the can found on https://clusterhat.com/ on each of the microSD with an imager. I use the raspberry pi image from the raspberry pi website https://www.raspberrypi.org/software/.  
 ### Case
 After this we need to connect the 4 fans with soldering to allow it to be attached to the clusterHat board.  
-Next thing to do is 3d print the case in which the server will be held in. Once this is 3D printed, screw in the 4 fans like shown in the image below.
+Next thing to do is 3d print the case in which the server will be held in. Once this is 3D printed, screw in the 4 fans like shown in the image below.  
+<img src="images/case isotropic.png" width="533" height="400">  
 
+<img src="images/case with cluster in.jpg" width="533" height="400">  
 # Setup
 ### VNC
 Once everything is fully assembled and the right OS is on each of the Raspberry Pis. Plug in a monitor, keyboard and mouse into the Raspberry Pi 4b so you can follow the initial setup guide given on (link gone).  
