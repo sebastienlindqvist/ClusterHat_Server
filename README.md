@@ -24,9 +24,11 @@ Back
 ### OS
 Now you need to place the raspbian os the can found on https://clusterhat.com/ on each of the microSD with an imager. I use the raspberry pi image from the raspberry pi website https://www.raspberrypi.org/software/.  
 ### Case
-After this we need to connect the 4 fans with soldering to allow it to be attached to the clusterHat board.  
-Next thing to do is 3d print the case in which the server will be held in. Once this is 3D printed, screw in the 4 fans like shown in the image below.  
+When it came to the case. It was designed using solidworks and the image below shows the model.   
 <img src="images/case isotropic.png" width="533" height="400">  
+The files can be found under the CAD folder for 3D printing. After this we need to connect the 4 fans with soldering to allow it to be attached to the clusterHat board. In the image below it shows where on the board the pins where the fans will be connected to. It shows underneath the board which pin is positive or negative.
+The screws supplied with the fans need to be filed down due to being too long. If left too long when moving the cluster in and out the screws collide with the sd cards.
+
 
 <img src="images/case with cluster in.jpg" width="533" height="400">  
 
