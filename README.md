@@ -29,7 +29,8 @@ Next thing to do is 3d print the case in which the server will be held in. Once 
 <img src="images/case isotropic.png" width="533" height="400">  
 
 <img src="images/case with cluster in.jpg" width="533" height="400">  
-# Setup
+
+# Setup #
 ### VNC
 Once everything is fully assembled and the right OS is on each of the Raspberry Pis. Plug in a monitor, keyboard and mouse into the Raspberry Pi 4b so you can follow the initial setup guide given on (link gone).  
 After this the first thing to do is to download vnc veiwer so you can interact with the Raspberry Pi 4b without needing a seperate moitor, mouse and keyboard. Once that is done we can start the next stuff.  
