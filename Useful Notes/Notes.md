@@ -55,7 +55,8 @@ In the configuration,
 - update the system
 
 When all changes are done, perform a reboot of the node. You should be able to login via SSH now.
-### Code from other websites
+### Code from other websites ###
+https://medium.com/@dhuck/the-missing-clusterhat-tutorial-45ad2241d738
 After the Pi boots back up, set up a SSH key with the following commands:
 ```
 ssh-keygen -t rsa -b 4096
@@ -147,6 +148,11 @@ sudo vi /etc/fstab
 # Add this line to the bottom:
 172.19.181.254:/media/Storage /media/Storage nfs defaults 0 0
 ```
+### More websites ###
+https://code.metcarob.com/node/174
+
+### More websites ###
+https://xaviergeerinck.com/post/infrastructure/clusterhat-setup
 
 # Docker Notes
 to install docker on raspberry pi 4b: https://dev.to/elalemanyo/how-to-install-docker-and-docker-compose-on-raspberry-pi-1mo
