@@ -1,6 +1,6 @@
 # ClusterHat-Docker-Kubernetes-Server
 Hello, I made this repository for setting up a raspberry server using a cluster hat, a ups. I am by no means confident in what I write, I'm currently in the process of learning it as well. However, if any of it is able to someone then that makes me happy. 
-Hopefully I will be able to maintain this and keep it up to date.
+Hopefully I will be useful to maintain this and keep it up to date.
 
 # Components
 the components used within this repository are:  
