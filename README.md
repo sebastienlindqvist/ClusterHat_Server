@@ -34,8 +34,8 @@ The screws supplied with the fans need to be filed down due to being too long. I
 
 # Setup #
 ### VNC
-Once everything is fully assembled and the right OS is on each of the Raspberry Pis. Plug in a monitor, keyboard and mouse into the Raspberry Pi 4b so you can follow the initial setup guide given on (link gone).  
-After this the first thing to do is to download vnc veiwer so you can interact with the Raspberry Pi 4b without needing a seperate moitor, mouse and keyboard. Once that is done we can start the next stuff.  
+Once everything is fully assembled and the right OS is on each of the Raspberry Pis. Plug in a monitor, keyboard and mouse into the Raspberry Pi 4b so you can turn on vnc within the preferences.  
+After this the first thing to do is to download vnc veiwer on your main computer so you can interact with the Raspberry Pi 4b without needing a seperate moitor, mouse and keyboard. Once that is done we can start the next stuff.  
 ### SSH 
 If instead you want to use SSH to connect to your Raspberry Pi 4b that also works. I recommend using PuTTY if you'v never done it before.
 
