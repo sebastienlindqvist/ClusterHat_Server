@@ -1,5 +1,6 @@
 # ClusterHat-Docker-Kubernetes-Server
-Hello, this repository for setting up a raspberry server using a cluster hat, a ups and docker or kubernetes
+Hello, I made this repository for setting up a raspberry server using a cluster hat, a ups. I am by no means confident in what I write, I'm currently in the process of learning it as well. However, if any of it is able to someone then that makes me happy. 
+Hopefully I will be able to maintain this and keep it up to date.
 
 # Components
 the components used within this repository are:  
@@ -11,7 +12,9 @@ the components used within this repository are:
 2x Arcylic Sheets  
 4x Fans  
 5x microSD  
-2x 18650 batteries
+2x 18650 batteries  
+1x OLED screen
+
 # Assembly
 When it comes to assembling the whole thing it is pretty simple. First you need assemble all the electronics. which can be seen in the images below.
 ### Fully Built Electronics
