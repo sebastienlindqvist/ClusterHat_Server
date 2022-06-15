@@ -42,6 +42,13 @@ After this the first thing to do is to download vnc veiwer on your main computer
 ### SSH 
 If instead you want to use SSH to connect to your Raspberry Pi 4b that also works. I recommend using PuTTY if you'v never done it before.
 
+once you have done that now you need to 
+```
+clusterhat on
+```
+this will power all the zeros on the 
+
+
 ### CusterHAT
 # Docker Swarm
 what is docker? docker is a online service that uses containers to allow quick and simple 
