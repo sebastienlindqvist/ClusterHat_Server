@@ -16,43 +16,7 @@ $ clusterctrl led off # Disables Power & P1-P4 LED on Cluster HAT (does not disa
 $ clusterctrl wp on # Write protects HAT EEPROM
 $ clusterctrl wp off # Disables EEPROM write protect (only needed for updates)
 ```
-### Code from other github ###
-https://github.com/lreimer/raspi-swarm-box
-Before you continue with the following steps, make sure you have performed the basic setup of all four Zero nodes.
-In a terminal, issue the following commands:
-```
-clusterhat on
 
-ssh-keygen
-ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.1
-ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.2
-ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.3
-ssh-copy-id -i ~/.ssh/id_rsa pi@172.19.181.4
-```
-To make working with the nodes a little easier, edit your `/etc/hosts` file and add the following:
-```
-172.19.181.254  master cnat
-172.19.181.1    p1
-172.19.181.2    p2
-172.19.181.3    p3
-172.19.181.4    p4
-```
-#### Zero Node Setup
-
-On the controller node, open a terminal and perform the following commands for each Zero (p1, p2, p3, p4).
-The user is `pi` and the initial password is `clusterhat`.
-```
-clusterhat on p1
-minicom p1
-sudo raspi-config
-```
-In the configuration,
-- make sure you extend the partition to the full size of your SD card!
-- enable SSH
-- change the root password
-- reduce the memory split to 16MB
-- adjust the locale and timezone settings
-- update the system
 
 When all changes are done, perform a reboot of the node. You should be able to login via SSH now.
 ### Code from other websites ###
@@ -66,18 +30,20 @@ After you have generated a ssh-key and displayed it, copy it because you will ne
 Set up a config file for SSH names ```~/.ssh/config``` with the following content:
 ```
 Host p1
-    Hostname 172.19.181.1
+    Hostname IP_Address
     User pi
 Host p2
-    Hostname 172.19.181.2
+    Hostname IP_Address
     User pi
 Host p3
-    Hostname 172.19.181.3
+    Hostname IP_Address
     User pi
 Host p4
-    Hostname 172.19.181.4
+    Hostname IP_Address
     User pi
 ```
+the IP_Address can be found with Advanced IP Scanner
+
 This previous step is a little superfluous, but you will now be able to quickly ssh into any of the nodes from the controller Pi with the command ```ssh hostname``` where ```hostname``` is the hostname of the nodes: p1, p2, p3, or pi4
 You should now be able to ssh into each of the nodes to set them up. Repeat the password and localization set up for each node that you performed for the controller node. You should also put the ssh-key that you copied earlier into the ```~/.ssh/authorized_keys``` file:
 ```
