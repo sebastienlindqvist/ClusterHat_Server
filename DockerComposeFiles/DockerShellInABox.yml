@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  shellinabox:
+    image: sspreitzer/shellinabox
+    container_name: shellinabox
+    restart: always
+    ports:
+      - 4200:4200
+    environment:
+      - SIAB_USER=user 
+      - SIAB_PASSWORD=password
+      - SIAB_SSL=false
+      - VIRTUAL_HOST=example.com 
+      - VIRTUAL_PORT=4200
+    deploy:
+      placement:
+        constraints: [node.labels==Main]

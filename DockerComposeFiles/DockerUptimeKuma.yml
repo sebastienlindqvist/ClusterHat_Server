@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    #container_name: uptime-kuma
+    volumes:
+      - type: bind
+        source: /home/pi/DockerFile/uptimeKuma/uptime-kuma-data
+        target: /app/data
+    ports:
+      - 3001:3001  # <Host Port>:<Container Port>
+    #restart: always
+    deploy:
+      placement:
+        constraints:
+          - "node.role==manager"

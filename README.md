@@ -30,11 +30,11 @@ When it comes to assembling the whole thing it is pretty simple. First you need 
 
 ### OS
 --------
-Now you need to place the raspbian os the can found on https://clusterhat.com/ on each of the microSD with an imager. I use the raspberry pi image from the raspberry pi website https://www.raspberrypi.org/software/.  
+Now you need to place the raspbian os the can found on https://clusterhat.com/ on each of the microSD with an Imager. I use the raspberry pi image from the raspberry pi website https://www.raspberrypi.org/software/.  
 
 ### Case
 ----------
-When it came to the case. It was designed using Solidworks and the image below shows the model. This has now been updated a  
+When it came to the case. It was designed using SolidWorks and the image below shows the model. This has now been updated a  
 <img src="images/case isotropic.png" width="533" height="400">  
 The files can be found under the CAD folder for 3D printing. After this we need to connect the 4 fans with soldering to allow it to be attached to the clusterHat board. In the image below it shows where on the board the pins where the fans will be connected to. It shows underneath the board which pin is positive or negative.
 The screws supplied with the fans need to be filed down due to being too long. If left too long when moving the cluster in and out the screws collide with the sd cards.
@@ -71,9 +71,14 @@ The ClusterHAT board has a couple pins dedicated for a fan, but this is not on b
 ```shell
 dtoverlay=gpio-fan,gpiopin=18,temp=75000 #this is 75 degrees C
 ```
-Note that the 20000 I put means 20 degree celecius. So when the CPU temperature is above 20 degrees, the fans come on.
-## PSU
+Note that the 20000 I put means 20 degree celsius. So when the CPU temperature is above 20 degrees, the fans come on.
 
+I have updated the Server casing. due to soldering issues with soldering 5 wires together. I had to use a single larger fan instead.
+## UPS Plus
+The UPS I use is called a EP-0136. It uses 2 18650 lithium battery
+
+I highly recommend Michael Klements video: https://youtu.be/clbt12upuaA  
+In addition, here is the website for the specific UPS: https://wiki.52pi.com/index.php/EP-0136
 # Docker Swarm
 What is docker? docker is a online service that uses containers to allow quick and simple deployment of software on a metaphorical port, in this case, the server. What is a container? A container is a standardized box that has everything necessary to run the programs within the container. Imagine how containers can easily stack on top and next to one another on a freight ships. Each container looks exactly the same of the outside but the inside could be anything.
 
@@ -104,7 +109,7 @@ https://docs.portainer.io/start/install/server/swarm/linux
 # Homer
 homer is a full static html/js dashboard generator. I used this to take the webpage for the whole server so I can access all the applications I have running as well as access to other applications on my local internet such as my 3D printer.
 
-When it came to using Docker directly did not work for me. Creating a docker-compose.yml file did not work for me either because it told me "it does not support that version". What did work for me was creating a stack on Portainer and writing in the same docker-compose.yml file. In addition, when it did work I noticed it did not have a port set for it because I deployed it to the swarm in general. So I altered the docker-compose file to specify I want it purely on the Pi 4 and that allowed me to access it.. 
+When it came to using Docker directly did not work for me. Creating a docker-compose.yml file did not work for me either because it told me "it does not support that version". What did work for me was creating a stack on Portainer and writing in the same docker-compose.yml file. In addition, when it did work I noticed it did not have a port set for it because I deployed it to the swarm in general. So I altered the docker-compose file to specify I want it purely on the Pi 4 and that allowed me to access it. 
 
 In order to change how it looks, you'll need to set a path to find the necessary files on the host. In the image below you will see where you need to add a path.
 
@@ -136,12 +141,6 @@ sudo apt install ShellInABox
 ```
 once that is done, simply type what is below into your browser.  
 ```https://[yourip]:4200```
-# WireGuard
-Another is Wireguard which allows you to create a VPN server which you can connect your mobile phone and Computer to use the PiHole on the go. So no matter where you are. You'll be place where your house is. especially useful if accessing potentially risky public internet spots.
-
-
-here is a link to a github repository for installing pihole and wireguard.
-https://github.com/IAmStoxe/wirehole
 
 # 3D printer
 I recently added a Raspberry Pi 3b to my 3D printer to make it smarter and to be able to control it from away from home

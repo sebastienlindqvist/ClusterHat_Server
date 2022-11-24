@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  homer:
+    image: b4bz/homer
+    volumes:
+      - type: bind
+        source: /home/pi/DockerFile/Homer/assets
+        target: /www/assets
+    ports:
+      - 8080:8080
+    user: 1000:1000 # default
+    environment:
+      - INIT_ASSETS=0 # default was 1
+    deploy:
+      placement:
+        constraints:
+          - "node.labels.name==p4"
