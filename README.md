@@ -36,7 +36,7 @@ This home sever will provide the following features:
 - Virtual Machines
 - VPN
 
-## ➤ System Requirements
+# ➤ System Requirements
 Before you begin, make sure you do the following first:
 ### ➤ Components
 Collect the necessary hardware:   
