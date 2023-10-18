@@ -1,8 +1,10 @@
+<img src="images/logos/Docker-Swarm_Logo.png" width="150" > 
+
 # **ClusterHat Swarm Server**
 Hello, I made this repository for setting up a raspberry server using a ClusterHat, UPS and, Docker Swarm. I am by no means confident in what I write, I'm currently in the process of learning it as well. However, if any of it is able to someone then that makes me happy. 
 Hopefully I will be useful to maintain this and keep it up to date.
 
-<img src="images/server.jpg" width="450" height="400"> 
+<img src="images/ClusterHAT/server.jpg" width="300" > 
 
 # ➤ Table of Content
 - [Features](#➤-features)
@@ -69,6 +71,13 @@ What is docker? docker is a online service that uses containers to allow quick a
 Now that I have given a brief overview of Docker and containers. Now we can talk about Docker Swarm. This is when we have multiple computers running the same containers or we can specify a container to run specifically on one node.
 
 [continue reading...]()
+
+### What I am using
+<img src="images/logos/portainer_logo.svg" width="200"> &nbsp;&nbsp;
+<img src="images/logos/Nginx.png" width="160"> &nbsp;&nbsp;
+<img src="images/logos/fluidd_icon.svg" width="180"> &nbsp;&nbsp;
+<img src="images/logos/Homer_Logo.png" width="50"> 
+
 # Show your support
 Give me a ⭐️ if this project helped you!  
 Made with 💜 by [me](https://github.com/sebastienlindqvist) 👋
